@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<style>
+		
+			#batteryBody {
+				float: left;
+				width: 200px;
+				height: 75px;
+				border: 10px #CCC solid;
+			}
+			.container {
+				width: 240px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 50px;
+			}
+			.batteryEnd {
+				float: left;
+				height: 95px;
+				width: 15px;
+			}
+			.batteryEnd div {
+				width: 15px;
+				height: 35px;
+				margin-top: 30px;
+				margin-left: 5px;
+				background-color: #CCC;
+			}
+			#indicator {
+				height: 100%;
+				width: 50%;
+			}
+			#indicator.charging {
+				background-color: #BFFF00;
+			}
+			#indicator.notCharging {
+				background-color: #FFFF00;
+			}
+			#noBattery {
+				clear: both;
+				text-align: center;
+				width: 200px;
+				margin: 0 auto;
+				padding-top: 10px;
+				color: #BBB;
+				font-size: 16px;
+			}
+		
+		</style>
+	
+	</head>
+	
+	<body>
+	
+		<div class="container">
+			<div id="batteryBody">
+				<div id="indicator">
+				 
+				</div>
+			</div>
+			<div class="batteryEnd">
+				<div>
+				 
+				</div>
+			</div>
+			<div id="noBattery"></div>
+		</div>
+		
+		<br/><br/>
+		
+		<script type="text/javascript">
+		
+			var battery = navigator.battery || navigator.msBattery || navigator.mozBattery || navigator.webkitBattery || navigator.oBattery;
+			var batteryIndicator = document.querySelector("#indicator");
+			 
+			if (battery) {
+				battery.addEventListener("chargingchange", updateBatteryNotification);
+				battery.addEventListener("levelchange", updateBatteryNotification);
+				updateBatteryNotification();
+			} else {
+				// no battery support
+				document.querySelector("#noBattery").innerHTML = "Sem suporte";
+			}
+			 
+			function updateBatteryNotification() {
+				// draw battery level
+				batteryIndicator.style.width = battery.level * 100 + "%";
+				 
+				// check if battery is charging
+				if (battery.charging) {
+					setClass(batteryIndicator, "charging");
+				} else {
+					setClass(batteryIndicator, "notCharging");
+				}
+			}
+			 
+			function setClass(element, classToAdd) {
+				element.className = classToAdd;
+			}
+			
+		</script>
+	
+	</body>
+
+</html>
