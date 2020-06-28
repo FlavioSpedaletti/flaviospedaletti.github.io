@@ -159,6 +159,18 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
+		
+		<script>
+			function get_age() {
+				var fullYear = 1985;
+				var now = new Date();
+			      	var birthday = new Date(now.getFullYear(), 12, 14);
+			      	if (now >= birthday) 
+					return now.getFullYear() - fullYear;
+			      	else
+					return now.getFullYear() - fullYear - 1;
+			 }
+		</script>
 
 	</body>
 </html>
