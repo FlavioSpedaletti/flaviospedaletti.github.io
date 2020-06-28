@@ -15,6 +15,18 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		
 		<script data-ad-client="ca-pub-1764209794096790" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+		<script>
+			function get_age() {
+				var fullYear = 1985;
+				var now = new Date();
+			      	var birthday = new Date(now.getFullYear(), 12, 14);
+			      	if (now >= birthday) 
+					return now.getFullYear() - fullYear;
+			      	else
+					return now.getFullYear() - fullYear - 1;
+			 }
+		</script>
 	</head>
 	<body>
 
@@ -159,18 +171,5 @@
 				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			})();
 		</script>
-		
-		<script>
-			function get_age() {
-				var fullYear = 1985;
-				var now = new Date();
-			      	var birthday = new Date(now.getFullYear(), 12, 14);
-			      	if (now >= birthday) 
-					return now.getFullYear() - fullYear;
-			      	else
-					return now.getFullYear() - fullYear - 1;
-			 }
-		</script>
-
 	</body>
 </html>
