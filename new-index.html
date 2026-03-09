@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flavio Spedaletti - Portfólio</title>
+  <link rel="stylesheet" href="assets/css/new-main.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    function get_age() {
+      var fullYear = 1985;
+      var now = new Date();
+      var birthday = new Date(now.getFullYear(), 11, 14);
+      if (now >= birthday)
+        return now.getFullYear() - fullYear;
+      else
+        return now.getFullYear() - fullYear - 1;
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <span class="logo">Flavio Spedaletti</span>
+      <ul class="nav-links">
+        <li><a href="#topo">Início</a></li>
+        <li><a href="#trabalho">O que faço</a></li>
+        <li><a href="#portfolio">Trabalho</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <section id="topo" class="hero-section">
+      <div class="container hero-content">
+        <img src="images/flavio_desfocada.jpg" alt="Flavio Spedaletti" class="avatar">
+        <div>
+          <h1>Flavio Spedaletti, <span class="idade"><script>document.write(get_age());</script></span></h1>
+          <p class="subtitle">Tech &amp;&amp; coffee <span class="emoji">🤖 ☕</span></p>
+          <a href="#trabalho" class="cta-btn">Saiba um pouco mais</a>
+        </div>
+      </div>
+    </section>
+    <section id="trabalho" class="section">
+      <div class="container">
+        <h2>Aqui tem um pouco do que faço.</h2>
+        <p class="section-desc">Destaco aqui algumas coisas legais que eu já tive oportunidade de fazer.</p>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-icon"><i class="fa fa-cogs"></i></div>
+            <h3>APIs & Microsserviços</h3>
+            <p>Desenvolvimento de APIs e microsserviços em .Net, sempre buscando integração simples e eficiente entre sistemas.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fa fa-cloud"></i></div>
+            <h3>Cloud & DevOps</h3>
+            <p>Automação de deploy, builds e ambientes em nuvem para garantir agilidade e estabilidade nos projetos.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">&#128161;</div>
+            <h3>Maker</h3>
+            <p>Nas horas vagas um pouquinho de Marcenaria, Arduíno, Raspberry, Makey Makey, fios e LEDs piscantes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2>Outras qualificações.</h2>
+        <ul class="qual-list">
+          <li>Mais de 10 anos mexendo com .Net, C#, APIs e microsserviços.</li>
+          <li>Angular, Blazor e front-end moderno sem mistério.</li>
+          <li>Automação de processos, web scraping e geração de relatórios pra facilitar a vida.</li>
+          <li>Cloud? Já rodei muita coisa em AWS e Azure, de infra a DevOps.</li>
+          <li>Banco de dados: SQL Server, Oracle, o que precisar.</li>
+          <li>Mensageria, filas, Redis, integração de sistemas... pode mandar.</li>
+          <li>CI/CD, Jenkins, Azure DevOps: gosto de ver o código indo pra produção sem drama.</li>
+          <li>Já liderei time, reestruturei sistemas e ajudei muita gente a entregar projeto bom.</li>
+          <li>MBA em Projetos (FGV) e Bacharel em Computação (FITO).</li>
+        </ul>
+      </div>
+    </section>
+    <section id="contato" class="section">
+      <div class="container">
+        <h2>Contato</h2>
+        <ul class="social-list">
+          <li><a href="https://www.linkedin.com/in/flaviospedaletti/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://github.com/flaviospedaletti" target="_blank"><i class="fa fa-github"></i></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="ano"></span> Flavio Spedaletti. Todos os direitos reservados.</p>
+    </div>
+    <script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
